@@ -27,3 +27,7 @@ public class Max3 {
 
 }
 ```
+- 변수 a,b,c의 최댓값을 max로 구하는 과정은 다음과 같이 정리할 수 있다
+1. max에 a 값을 넣는다
+2. b값이 max보다 크면 max에 b값을 넣는다
+3. c값이 max보다 크면 max에 c값을 넣는다 
