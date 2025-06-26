@@ -53,7 +53,7 @@ class A {
 ### 보충수업) 숫자와 문자열 입력하기 2 
 # Scanner 메서드별 자료형 및 입력값 범위
 
-아래 표는 `java.util.Scanner` 클래스의 주요 입력 메서드와 각 메서드가 반환하는 자료형, 그리고 허용하는 입력값의 범위를 정리한 것입니다.
+아래 표는 `java.util.Scanner` 클래스의 주요 입력 메서드와 각 메서드가 반환하는 자료형, 그리고 허용하는 입력값의 범위를 정리한 것이다.
 
 | 메서드           | 반환 자료형 | 입력값의 범위                                                                                   |
 | ---------------- | ---------- | ----------------------------------------------------------------------------------------------- |
@@ -67,11 +67,46 @@ class A {
 | next()           | String     | 문자열(공백, 줄 바꿈 문자로 구분)                                                           |
 | nextLine()       | String     | 문자열 1줄                                         |
 
+그러면 여러값에 대해서도 최댓값을 제대로 구할 수 있는지 확인해 보겠다. 
+- chap01/Max3Method.java 
+```
 
+public class Max3Method {
+	
+	static int max3(int a, int b, int c) {
+		int max =a;
+		if (b>max) 
+			max=b;
+		if (c>max) 
+			max=c;
+		
+		return max; // return max;가 없다면 max 변수는 메서드 내부에서만 살아있는 로컬 변수이고, 호출 지점으로는 아무것도 전달되지 않음
+	}
 
+	public static void main(String[] args) {
+		System.out.println("max3(3,2,1) = "+max3(3,2,1)); 	//a
+		System.out.println("max3(3,2,2) = "+max3(3,2,2));	//b 
+		System.out.println("max3(3,1,2) = "+max3(3,1,2) );	//c
+		System.out.println("max3(3,2,3) = "+max3(3,2,3));	//d
+		System.out.println("max3(2,1,3) = "+max3(2,1,3));	//e 
+		System.out.println("max3(3,3,2) = "+max3(3,3,2));	//f
+		System.out.println("max3(3,3,3) = "+max3(3,3,3));	//g	
+		System.out.println("max3(2,2,3) = "+max3(2,2,3));	//h 
+		System.out.println("max3(2,3,1) = "+max3(2,3,1)); 	//i
+		System.out.println("max3(2,3,2) = "+max3(2,3,2));	//j 
+		System.out.println("max3(1,3,2) = "+max3(1,3,2));	//k
+		System.out.println("max3(2,3,3) = "+max3(2,3,3));	//l 
+		System.out.println("max3(1,2,3) = "+max3(1,2,3));	//m
+	}
 
+}
+```
+'알고리즘'은 다음과 같이 정의할 수 있다 
+|---| 
+|어떤 문제를 해결하기 위한 절차로, 명확하게 정의되고 순서가 있는 유한 개의 규칙으로 이루어진 집합|
 
-
+#### 매개변수 
+- 메서드를 정의할 때 메서드에 전달되는 값을 저장하기 위해 변수(variable)를 선언하는데, 이를 매개변수(parameter) 또는 형식매개변수(formal parameter)라고 한다. 형식매개변수를 가인수(임시 인수)라 하고, 매서드를 호출할 때 사용하는 매개변숫값(value)을 실인수(actual argument)라고 한다. 간단하게 매서드를 정의할 때는 '매개변수', 메서드를 호출할 때는 '실인수'라고 생각하면 된다. 
 
 
 
