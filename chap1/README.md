@@ -319,3 +319,49 @@ static int med3(int a, int b, int c) {
  	- 성능: 운이 나쁘면(답이 마지막에 있으면) 모든 조건을 다 검사해야 하므로 비교 횟수가 최대 6~8번 이상으로 훨신 많아진다
 - 결론: 기존 것은 가장 빠른 길로 한 번에 찾아가는 것이고, 비효울적인 방식은 모든 길을 하나씩 다 가보는것이라서 더 느리다      
 
+
+## 조건 판단과 분기 
+입력한 정숫값의 부호(양수/음수/0)를 판단하는 프로그램 
+- chap01/JudgeSign.java
+```
+import java.util.Scanner;
+
+public class JudgeSign {
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.print("정수를 입력하세요: ");
+		int n = stdIn.nextInt();
+		
+		if (n > 0) 
+			System.out.println("이 수는 양수입니다");
+		else if (n < 0) 
+			System.out.println("이 수는 음수입니다");
+		else 
+			System.out.println("이 수는 0입니다");
+
+	}
+
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
