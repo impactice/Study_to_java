@@ -258,7 +258,23 @@ public class Median {
 	}
 
 }
+```
 
+### 연습 문제 
+Q4. 세 값의 대소 관계인 13가지 조합의 중앙값을 구하여 출력하는 프로그램을 작성하세요. 
+```
+
+```
+
+Q5. 중앙값을 구하는 메서드는 다음과 같이 작성할 수도 있습니다. 그러나 실습 1C-1의 med3 메서드에 비해 효율이 떨어지는 데 그 이유를 설명하세요. 
+```
+static int med3(int a, int b, int c) {
+	if ((b >= a && c <= a) || (b <= a && c >=a))
+		return a;
+	else if ((a > b && c < b) || (a < b && c > b))
+		return b;
+	return c;
+} 
 ```
 
 
