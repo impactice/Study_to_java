@@ -33,7 +33,7 @@ public class Max3 {
 3. c값이 max보다 크면 max에 c값을 넣는다 
 - 이렇게 여러 문장(프로세스)이 순차적으로 실행되는 구조를 순차(sequential) 구조라고 한다. 그런데 1.은 단순한 대입이지만 2.,3.은 if문이다. () 안에 있는 식을 평가한 결과에 따라 프로그램의 실행 흐름을 변경하는 if문을 선택(selection) 구조라고 한다
 
-### 보충수업) 숫자와 문자열 입력하기 1 
+### 보충수업1-1) 숫자와 문자열 입력하기 1 
 - 키보드로 숫자와 문자열을 입력하는 방법은 다음과 같다
 ```
 import java.util.Scanner;
@@ -50,7 +50,7 @@ class A {
 
 - 참고로 stdIn은 키보드와 연결된 표준 입력 스트림 System.in에서 문자나 숫자를 꺼내는 장치 역할을 한다. 변수명 stdIn은 다른 이름으로 바꿔도 된다
 
-### 보충수업) 숫자와 문자열 입력하기 2 
+### 보충수업1-2) 숫자와 문자열 입력하기 2 
 # Scanner 메서드별 자료형 및 입력값 범위
 
 아래 표는 `java.util.Scanner` 클래스의 주요 입력 메서드와 각 메서드가 반환하는 자료형, 그리고 허용하는 입력값의 범위를 정리한 것이다.
@@ -147,14 +147,74 @@ public class Max4Method {
 
 ```
 
+Q2. 세 값의 최솟값을 구하는 min3 메서드를 작성하세요. 
+```
+static int min3(int a, int b, int c)
+```
+```
+import java.util.Scanner;
 
+public class Min3Method {
+	static int min3(int a, int b, int c){
+		int min = a;
+		if (min > b)
+			min = b; 
+		if (min > c)
+			min = c;
+		return min;
+	}
+	
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int one = stdIn.nextInt();
+		int two = stdIn.nextInt();
+		int three = stdIn.nextInt(); 
+		
+		int min = min3(one,two,three);
+		System.out.print("최솟값: "+min);
 
+	}
 
+}
+```
 
+Q3. 네 값의 최솟값을 구하는 min4 메서드를 작성하세요. 
+```
+static int min4(int a,int b, int c, int d)
+```
 
+```
+import java.util.Scanner;
 
+public class Min4Method {
+	static int min4(int a,int b, int c, int d) {
+		int min = a;
+		if (min > b)
+			min = b;
+		if (min > c)
+			min = c;
+		if (min > d)
+			min = d;
+		return min;
+	}
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int a = stdIn.nextInt();
+		int b = stdIn.nextInt();
+		int c = stdIn.nextInt();
+		int d = stdIn.nextInt();
+		
+		int min = min4(a,b,c,d);
+		System.out.print("최솟값: "+min);
 
+	}
 
+}
+```
+
+### 보충수업1-3) 메서드의 반환값과 메서드 호출식의 평가 
+- 메서드는 return 문에서 처리한 결괏값을 원래 호출할 곳으로 반환한다.
+- max3 메서드의 반환값은 int형이고, 메서드의 끝 부분에서 번수 max값을 반환한다 
 
 
 
