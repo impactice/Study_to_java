@@ -264,6 +264,40 @@ public class Median {
 Q4. 세 값의 대소 관계인 13가지 조합의 중앙값을 구하여 출력하는 프로그램을 작성하세요. 
 ```
 
+public class MedMethod {
+	static int med3(int a, int b, int c) {
+		if (a >= b)
+			if (b >= c)
+				return b;
+			else if (a <= c)
+				return a;
+			else
+				return c;
+		else if (a > c)
+			return a;
+		else if (b > c)
+			return c;
+		else
+			return b;
+	}
+
+	// main 메소드의 출력 문자열만 수정합니다.
+	public static void main(String[] args) {
+		System.out.println("med3(3,2,1) = "+med3(3,2,1)); 	// 중앙값: 2
+		System.out.println("med3(3,2,2) = "+med3(3,2,2));	// 중앙값: 2
+		System.out.println("med3(3,1,2) = "+med3(3,1,2));	// 중앙값: 2
+		System.out.println("med3(3,2,3) = "+med3(3,2,3));	// 중앙값: 3
+		System.out.println("med3(2,1,3) = "+med3(2,1,3));	// 중앙값: 2
+		System.out.println("med3(3,3,2) = "+med3(3,3,2));	// 중앙값: 3
+		System.out.println("med3(3,3,3) = "+med3(3,3,3));	// 중앙값: 3
+		System.out.println("med3(2,2,3) = "+med3(2,2,3));	// 중앙값: 2
+		System.out.println("med3(2,3,1) = "+med3(2,3,1)); 	// 중앙값: 2
+		System.out.println("med3(2,3,2) = "+med3(2,3,2));	// 중앙값: 2
+		System.out.println("med3(1,3,2) = "+med3(1,3,2));	// 중앙값: 2
+		System.out.println("med3(2,3,3) = "+med3(2,3,3));	// 중앙값: 3
+		System.out.println("med3(1,2,3) = "+med3(1,2,3));	// 중앙값: 2
+	}
+}
 ```
 
 Q5. 중앙값을 구하는 메서드는 다음과 같이 작성할 수도 있습니다. 그러나 실습 1C-1의 med3 메서드에 비해 효율이 떨어지는 데 그 이유를 설명하세요. 
@@ -276,7 +310,12 @@ static int med3(int a, int b, int c) {
 	return c;
 } 
 ```
-
-
-
+기존 med3 메서드가 더 효율적인 이유는 '비교 연산' 횟수가 훨씬 적기 때문이다.
+- 효율적인 med3(기존 코드):
+	- 전략: if-else 구조를 통해 한 번의 비교로 경우의 수를 절반씩 줄여나간다.(결정 트리 방식)
+ 	- 성능: 어떤 값이 들어와도 최대 3번의 비교만으로 답을 찾아 불필요한 검사를 하지 않는다.
+- 비효율적인 med3:
+	- 전략: 'a가 중앙값인가?','b가 중앙값인가?'를 순서대로 모두 확인한다.
+ 	- 성능: 운이 나쁘면(답이 마지막에 있으면) 모든 조건을 다 검사해야 하므로 비교 횟수가 최대 6~8번 이상으로 훨신 많아진다
+- 결론: 기존 것은 가장 빠른 길로 한 번에 찾아가는 것이고, 비효울적인 방식은 모든 길을 하나씩 다 가보는것이라서 더 느리다      
 
