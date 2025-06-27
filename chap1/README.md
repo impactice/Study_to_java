@@ -105,15 +105,47 @@ public class Max3Method {
 |---| 
 |어떤 문제를 해결하기 위한 절차로, 명확하게 정의되고 순서가 있는 유한 개의 규칙으로 이루어진 집합|
 
+- 물론 알고리즘을 아무리 명확하게 정의해도 변숫값에 따라 결과가 맞기도 하고 틀리기도 한다면 올바를 알고리즘이라 할 수 없다. 그래서 여기서는 세 값의 최댓값을 구하는 알고리즘이 올바른지 확인하기 위해 값을 여러 개 입력하여 프로그램의 결괏값을 확인했다.
+
 #### 매개변수 
 - 메서드를 정의할 때 메서드에 전달되는 값을 저장하기 위해 변수(variable)를 선언하는데, 이를 매개변수(parameter) 또는 형식매개변수(formal parameter)라고 한다. 형식매개변수를 가인수(임시 인수)라 하고, 매서드를 호출할 때 사용하는 매개변숫값(value)을 실인수(actual argument)라고 한다. 간단하게 매서드를 정의할 때는 '매개변수', 메서드를 호출할 때는 '실인수'라고 생각하면 된다. 
 
+### 연습문제 
+Q1. 네 값이 최댓값을 구하는 max4 메서드를 작성하세요. 작성한 메서드를 테스트하기 위해 main 메서드를 포함한 프로그램을 작성해야 합니다. 이후의 문제도 마찬가지입니다. 
+```
+static int max4(int a, int b, int c, int d)
+```
 
+```
+import java.util.Scanner;
 
+public class Max4Method {
+	static int max4(int a, int b, int c, int d) {
+		int max = a;
+		if(max < b) 
+			max=b;
+		if(max < c)
+			max=c;
+		if(max < d)
+			max=d;
+		
+		return max;
+	}
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int a = stdIn.nextInt();
+		int b = stdIn.nextInt();
+		int c = stdIn.nextInt();
+		int d = stdIn.nextInt();
+		int max = max4(a, b, c, d);
 
+		System.out.print("최댓값: "+max);
+		
+	}
 
+}
 
-
+```
 
 
 
