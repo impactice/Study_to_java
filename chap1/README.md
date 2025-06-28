@@ -347,21 +347,91 @@ public class JudgeSign {
 
 ```
 
+- chap01/JudgeABC1.java
+```
+import java.util.Scanner;
 
+public class JudgeABC1 {
 
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		System.out.print("숫자를 입력하세요: ");
+		int n = stdIn.nextInt();
+		
+		if(n ==1)
+			System.out.println("A");
+		else if (n==2)
+			System.out.println("B");
+		else 
+			System.out.println("C");
+		
+	}
 
+}
+```
 
+- chap01/JudgeABC2.java
+```
+import java.util.Scanner;
 
+public class JudgeABC2 {
 
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("점수를 입력: ");
+		
+		int n = stdIn.nextInt();
+		
+		if (n == 1)
+			System.out.println("A");
+		else if (n == 2)
+			System.out.println("B");
+		else if (n ==3)
+			System.out.println("C");
 
+	}
 
+}
 
+```
+숫자 4이상을 입력하게 되면 출력이 아무것도 안 나온다 
 
+- chap01/JudgeABC2x.java
+```
+import java.util.Scanner;
 
+public class JudgeABC2x {
 
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("점수를 입력: ");
+		
+		int n = stdIn.nextInt();
+		
+		if (n == 1)
+			System.out.println("A");
+		else if (n == 2)
+			System.out.println("B");
+		else if (n ==3)
+			System.out.println("C");
+		else 
+			;
 
+	}
 
+}
 
+```
+
+### 보충수업1-5) 연산자와 피연산자 
+- +,- 등의 연산 기호를 연산자(operator)라고 하고, 연산의 대상이 되는 것을 피연산자(operand)라고 한다 ex) a > b에서 연산자는 >이고 피연산자는 a,b이다.
+- 연산자는 피연산자의 수에 따라 다음과 같이 세 종류가 있다
+	- 단항 연산자(unary operator) 피연산자 1개 ex)a++
+ 	- 2항 연산자(binary operator) 피연산자 2개 ex)a<b
+  	- 3항 연산자(ternary operator) 피연산자 3개 ex)a?b:c   
+자바에서 유일한 3항 연산자는 조건 연산자
 
 
 
