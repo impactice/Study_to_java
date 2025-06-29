@@ -471,17 +471,70 @@ System.out.println((c == 0) ? "c는 0이 아님");
 # 반복 
 
 ## 1부터 n까지 정수의 합 구하기 
+- chap01/SumWhile.java 
+```
+import java.util.Scanner;
+
+public class SumWhile {
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("1부터 n까지의 합을 구합니다");
+		
+		System.out.print("n값: ");
+		int n = stdIn.nextInt();
+		
+		int sum =0; 
+		int i =1;
+		
+		while (i <=n) {
+			sum +=i;
+			i++;
+		}
+		System.out.println("1부터 "+n+"까지의 합은 "+sum+"입니다.");
+	}
+
+}
 
 ```
 
+### while문 반복 
+- 루프(loop): 어떤 조건이 성립하는 동안 처리(프로그램 명령문 또는 명령어의 집합)를 반복하여 실행하는 것을 반복(repetition) 구조 
+- while문은 실행 전에 반복을 계속할지를 판단하는데, 이런 구조를 '사전판단반복'이라고 한다
+	- 제어식의 평싯값이 true이면 프로그램 명령문을 반복한다 
+
+### 연습문제 
+Q6. while 문이 종료될 때 변수 i값이 n+1이 되는지 확인하세요. 
+- chap01/Sum2While.java 
 ```
+import java.util.Scanner;
 
+public class Sum2while {
 
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("1부터 n까지의 합을 구합니다");
+		
+		System.out.print("n값: ");
+		int n = stdIn.nextInt();
+		
+		int sum =0; 
+		int i =1;
+		
+		while (i <=n) {
+			sum +=i;
+			i++;
+		}
+		System.out.println("while문 종료 시의 i값: "+i);
+		System.out.println("1부터 "+n+"까지의 합은 "+sum+"입니다.");
 
+	}
 
+}
 
-
-
+```
 
 
 
