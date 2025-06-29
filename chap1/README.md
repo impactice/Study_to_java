@@ -504,6 +504,9 @@ public class SumWhile {
 - while문은 실행 전에 반복을 계속할지를 판단하는데, 이런 구조를 '사전판단반복'이라고 한다
 	- 제어식의 평싯값이 true이면 프로그램 명령문을 반복한다 
 
+|--|
+|while(제어식) 명령문 |
+
 ### 연습문제 
 Q6. while 문이 종료될 때 변수 i값이 n+1이 되는지 확인하세요. 
 - chap01/Sum2While.java 
@@ -536,10 +539,32 @@ public class Sum2while {
 
 ```
 
+### for문 반복 
+- chap01/SumFor.java 
+```
+import java.util.Scanner;
 
+public class SumFor {
 
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("1부터 n까지의 합을 구합니다.");
+		System.out.print("n값: ");
+		int n = stdIn.nextInt();
+		
+		int sum = 0;
+		
+		for(int i =1; i <=n; i++) 
+			sum += i; 
 
+		System.out.println("1부터 "+ n +"까지의 합은 "+sum+"입니다.");
 
+	}
+
+}
+
+```
 
 
 
