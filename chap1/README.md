@@ -571,14 +571,82 @@ public class SumFor {
 |------------------------|
 | `for (초기화 부분; 제어식; 업데이트 부분) 명령문` |
 
+- 초기화 부분은 for문을 실행하기 전에 한 번만 실행한다
+- 제어식을 평가한 값이 true이면 for 문의 명령문을 반복한다 
+- 명령문을 실행한 다음에는 업데이트 부분을 실행한다
 
 
+### 연습문제 
+Q7. 1~10의 합은 (1+10) * 5와 같이 구할 수 있습니다. 이를 '가우스의 덧셈'이라고 하는데 이 방법을 이용하여 1부터 n까지의 정수 합을 구하는 프로그램을 작성하세요. 
+- chap01/SumFor2.java 
+```
+import java.util.Scanner;
+
+public class Sumfor2 {
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in); 
+		
+		System.out.println("1부터 n까지의 합을 구합니다.");
+		System.out.print("n값: ");
+		int n = stdIn.nextInt();
+		
+		int sum = n * (n + 1) / 2;
+		System.out.println("1부터 "+ n +"까지의 합은 "+sum+"입니다.");
 
 
+	}
 
+}
 
+```
 
+Q8. 정수 a,b를 포함하여 그 사이의 모든 정수의 합을 구하여 반환하는 메서드를 작성하세요. 
+```
+static int sumof(int a, int b) 
+```
 
+```
+import java.util.Scanner;
+
+public class SumofMethod {
+	static int sumof(int a, int b) {
+	    int min, max; // 작은 값, 큰 값을 저장할 변수
+
+	    // a와 b 중 어느 값이 큰지 확인하여 min, max 설정
+	    if (a < b) {
+	        min = a;
+	        max = b;
+	    } else {
+	        min = b;
+	        max = a;
+	    }
+
+	    int sum = 0; // 합계를 초기화
+	    for (int i = min; i <= max; i++) {
+	        sum += i; // min부터 max까지 모든 정수를 차례로 더함
+	    }
+	    return sum;
+	}
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.print("a를 입력: ");
+		
+		int a = stdIn.nextInt();
+		
+		System.out.print("b를 입력: ");
+		
+		int b = stdIn.nextInt();
+		
+		int sum = sumof(a,b); 
+		
+		System.out.print(sum);
+	}
+
+}
+
+```
 
 
 
