@@ -708,6 +708,7 @@ public class SumFor_2 {
 
 ```
 양수만 입력 받기 위해 do while 문으로 프로그램을 작성 
+|형식|
 |--|
 |do while 문 (제어식)|
 
