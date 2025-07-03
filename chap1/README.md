@@ -678,3 +678,46 @@ for (int i = 1; i<= 7; i++)
 - 쉽표로 구분하여 여러 개의 식을 작성해도 된다
 - 제어식과 마찬가지로 for 문의 업데이트 부분도 생략 가능
 
+
+## 양수만 입력받아 1부터 n까지의 합 구하기 
+```
+import java.util.Scanner;
+
+public class SumFor_2 {
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int n;
+		
+		System.out.println("1부터 n까지의 합을 구합니다");
+
+		do {
+			System.out.print("n값: ");
+			n = stdIn.nextInt();
+		}while (n <=0); 
+		
+		int sum = 0;
+		
+		for (int i = 1; i <=n; i++)
+			sum += i;
+		
+		System.out.println("1부터 "+n+"까지의 합은 "+sum+"입니다.");
+	}
+
+}
+
+```
+양수만 입력 받기 위해 do while 문으로 프로그램을 작성 
+|--|
+|do while 문 (제어식)|
+
+
+
+
+
+
+
+
+
+
+
