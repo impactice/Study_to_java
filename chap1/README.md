@@ -815,9 +815,9 @@ public class SumVerbose1 {
 		
 		for (int i = 1; i<= n; i++) {
 			if(i < n)
-				System.out.print(i+" + ");
+				System.out.print(i+" + ");  //1
 			else 
-				System.out.print(i+" = ");
+				System.out.print(i+" = ");   //2
 			sum += i;
 		}
 		
@@ -834,12 +834,44 @@ public class SumVerbose1 {
 n값: 5 
 1 + 2 + 3 + 4 + 5 = 5 |
 
+1. 중간 고정: 변수 i값 뒤에 +를 출력합니다. 예) "1 + ","2 + ","3 + ","4 + "
+2. 마지막 과정: 변수 i값 뒤에 =을 출력합니다. 예) "5 = "
 
+하지만 다음과 같이 프로그램을 만드는 것은 바람직하지 않다. 그 이유는 10,000이라면 for문은 반복을 10,000번 수행해야 한다. 다시 말해 1 ~ 9,999번까지는 판단식 i < n이 성립하므로 1을 실행하고, 판단식이 성립하지 않아 2를 실행하는 경우는 단 한 번이다. 마지막 과정을 한 번 실행하기 위해 뮤려 10,000번이나 판단해야 하는 셈이다. 이렇게 마지막 과정을 실행하기 위한 방법으 ㄹ알고 있는데도 반복할 때마다 조건을 판단하여 실행하는 것은 프로그램의 효율을 떨어뜨린다. 
 
+- chap01/SumVerbose2.java 
+```
+import java.util.Scanner;
 
+public class SumVerbose2 {
 
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in); 
+		int n;
+		
+		System.out.println("1부터 n까지의 합을 구합니다.");
+		
+		do {
+			System.out.print("n값: ");
+			n = stdIn.nextInt();
+		}while(n <= 0);
+		
+		int sum = 0;
+		
+		for (int i = 1; i< n; i++) {
+			System.out.print(i+" + "); 
+			sum += i;
+		}
+		
+		System.out.print(n+" = ");
+		sum += n; 
+		System.out.println(sum);
 
+	}
 
+}
+
+```
 
 
 
