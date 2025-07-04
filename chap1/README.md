@@ -764,8 +764,96 @@ public class SumFor3 {
 
 Q10. 양의 정수를 입력하고 자릿수를 출력하는 프로그램을 작성하세요. 예를 들어 135를 입력하면 '그 수는 3자리입니다.'라고 출력하고, 1314를 입력하며 '그 수는 4자리입니다.'라고 출력합니다. 
 ```
+import java.util.Scanner;
+
+public class SumFor4 {
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		int a;
+		
+		System.out.print("정수를 입력하세요: ");
+		a = stdIn.nextInt();
+		
+		int count = 0;
+		while (a > 0) {
+		    a /= 10;
+		    count++;
+		}
+		System.out.println("그 수는 "+count+"입니다.");
+		
+		if (a <0) {
+			System.out.print("0보다 큰 양의 정수를 입력해주세요");
+		}
+
+	}
+
+}
 
 ```
+
+## 반복 과정엥서 조건 판단하기 1
+- chap01/SumVerbose1.java 
+```
+import java.util.Scanner;
+
+public class SumVerbose1 {
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in); 
+		int n;
+		
+		System.out.println("1부터 n까지의 합을 구합니다.");
+		
+		do {
+			System.out.print("n값: ");
+			n = stdIn.nextInt();
+		}while(n <= 0);
+		
+		int sum = 0;
+		
+		for (int i = 1; i<= n; i++) {
+			if(i < n)
+				System.out.print(i+" + ");
+			else 
+				System.out.print(i+" = ");
+			sum += i;
+		}
+		
+		System.out.println(sum);
+	}
+
+}
+
+```
+
+|실행 결과| 
+|--|
+|1부터 n까지의 합을 구합니다. 
+n값: 5 
+1 + 2 + 3 + 4 + 5 = 5 |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
