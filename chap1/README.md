@@ -929,12 +929,34 @@ for (int i = 1; i <= n; i++)
 		System.out.print("-");
 	else
 		System.our.print("+");
-
 ```
+이처럼 for문의 초기화 부분과 루프 본문인 ir문도 변경해야 한다. 또한 print() 메서드를 호출하는 순서도 바꿔야 한다. 
+- chap01/Alternative2.java 
+```
+import java.util.Scanner;
 
+public class Alternative2 {
 
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int n;
+		
+		System.out.println("+와 -를 번갈아 n개 출력합니다.");
+		
+		do {
+			System.out.print("n값: ");
+			n = stdIn.nextInt();
+		}while(n <= 0);
+		
+		for(int i=0; i < n / 2; i++)
+			System.out.print("+-");
+		
+		if (n % 2 != 0)
+			System.out.print("+");
+	}
 
-
+}
+```
 
 
 
