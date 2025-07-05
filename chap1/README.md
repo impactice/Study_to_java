@@ -858,12 +858,12 @@ public class SumVerbose2 {
 		
 		int sum = 0;
 		
-		for (int i = 1; i< n; i++) {
+		for (int i = 1; i< n; i++) { //1
 			System.out.print(i+" + "); 
 			sum += i;
 		}
 		
-		System.out.print(n+" = ");
+		System.out.print(n+" = ");  //2
 		sum += n; 
 		System.out.println(sum);
 
@@ -873,13 +873,18 @@ public class SumVerbose2 {
 
 ```
 
+프로그램이 2단계로 값을 출력한다 
+1. 중간과정: for 문에서 1부터 n-1까지의 값 뒤에 +를 출력한다
+2. 마지막 과정: n값 뒤에 =와 합계를 출력한다 
 
+for 문의 반복 횟수가 n번에서 n-1번으로 줄었고, if 문의 판단 횟수는 n번에서 0번으로 줄었다. 다만 반복 횟수가 한 번 줄어지만 2를 추가 수행하므로 강간 과정의 횟수는 결국 상쇄된다 여기서 복합 대입 연산자를 사용해 대입한 뒤에 왼쪽 피연산잣값을 생성하도록 만들면 2부분을 다음과 같이 한 줄로 나타낼 수 있다 
 
+```
+System.out.println(n+" = " + (sum += n));
+```
 
-
-
-
-
+## 반복 과정에서 조건 판단히기 2 
+지정한 개수의 기로를 중간에 줄 바꿈 없이 연속해서 보여 주는 프로그램이다. +/- 기호를 번갈아 출력한다 
 
 
 
