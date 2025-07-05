@@ -888,8 +888,54 @@ System.out.println(n+" = " + (sum += n));
 
 - chap01/Alternative1.java
 ```
+import java.util.Scanner;
+
+public class Alternative1 {
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int n;
+		
+		System.out.println("+와 -를 번갈아 n개 출력합니다.");
+		
+		do {
+			System.out.print("n값: ");
+			n = stdIn.nextInt();
+		}while(n <= 0);
+		
+		for(int i=0; i < n; i++)
+			if (i%2 ==0)
+				System.out.print("+");
+			else 
+				System.out.print("-");
+
+	}
+
+}
 
 ```
+for 문에서 변수 i값을 0부터 n-1까지 증가하는 과정을 정리하면 
+- i가 짝수(2로 나눈 나머지가 0)이면 +를 출력한다
+- i가 홀수이면 -를 출력한다
+
+그런데 이 프로그램에는 2가지 문제점이 있다 
+1. 반복할 때마다 if문을 실행해야 한다. = for 문을 반복할 때마다 if문을 실행하고 i값이 홀수인지 알아내기 위해 if문을 모두 n번 실행햐야 한다. ex) n값이 50,000이면 if문도 50,000번 실행한다
+2. 변경할 때 유연하게 대응하기 어렵다. 이 프로그램의 카운터용 변수인 i값은 0부터 n-1까지 1씩 증가한다. 
+
+만약 i값을 0부터 시작하지 않고 1부터 n까지 증가시키려면 다음과 같이 for문 전체를 수정해야 한다
+```
+for (int i = 1; i <= n; i++)
+	if (i % 2 == 0)
+		System.out.print("-");
+	else
+		System.our.print("+");
+
+```
+
+
+
+
+
 
 
 
