@@ -998,10 +998,10 @@ public class PrintStars1 {
 		for (int i = 0; i < n; i++) {
 			System.out.print("*");
 			if(i % w == w - 1)
-				System.out.println();
+				System.out.println(); //1 줄 바꿈꿈
 		}
 		if (n % w != 0)
-			System.out.println();
+			System.out.println(); //2 줄 바꿈
 	}
 
 }
@@ -1016,9 +1016,16 @@ w값: 5|
 |*****|
 |****|
 
+이 프로그램은 변수 i값을 1씩 증가시키면서 *를 출력한다. 
+1. for문에서 변수 i값을 w값으로 나눈 나머지가 w-1일 때 줄 바꿈을 한다. w값이 5라면 i값이 4,9,14일 때 줄 바꿈을 한다
+2. n값이 w값의 배수이면 15번째 *를 출력한 뒤에 마지막 줄 바꿈을 하면 된다. 그러나 n값이 w값의 배수가 아니라면 마지막 줄 바꿈은 2에서 한다. 즉, n값이 w값의 배수가 아닐 때만 줄 바꿈을 한다. 
 
+하지만 for 문을 반복할 때마다 if 문을 실행하므로 효율적이지 않다. 
 
+- chap01/PrintStars2.java 
+```
 
+```
 
 
 
