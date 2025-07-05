@@ -948,18 +948,20 @@ public class Alternative2 {
 			n = stdIn.nextInt();
 		}while(n <= 0);
 		
-		for(int i=0; i < n / 2; i++)
+		for(int i=0; i < n / 2; i++) //1
 			System.out.print("+-");
 		
-		if (n % 2 != 0)
+		if (n % 2 != 0) //2
 			System.out.print("+");
 	}
 
 }
 ```
 
+1. for 문은 +-를 n/2회 출력한다. 예를 들어 n값이 12이면 6번, 15이면 7번 출력한다
+2. n이 홀수일 때에만 +를 출력한다.
 
-
+이 프로그램에서는 반복할 때마다 if 문의 판단을 실행할 필요가 없다. 그러므로 if 문의 판단은 2에서 한 번만 실행한다. 또한 나눗셈 회숫도 1의 n/2와 2의 n%2를 실행한 것처럼 2번으로 줄었다 \n
 
 
 
