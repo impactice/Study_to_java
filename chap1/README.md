@@ -793,7 +793,7 @@ public class SumFor4 {
 
 ```
 
-## 반복 과정엥서 조건 판단하기 1
+## 반복 과정에서 조건 판단하기 1
 - chap01/SumVerbose1.java 
 ```
 import java.util.Scanner;
@@ -963,5 +963,75 @@ public class Alternative2 {
 
 이 프로그램에서는 반복할 때마다 if 문의 판단을 실행할 필요가 없다. 그러므로 if 문의 판단은 2에서 한 번만 실행한다. 또한 나눗셈 회숫도 1의 n/2와 2의 n%2를 실행한 것처럼 2번으로 줄었다
 
-카운터용
+카운터용 변수 i값의 시작을 1로 바꾸는 것도 유연하게 대응할 수 있다. for 문을 밑에처럼 변경하면 된다. for문의 초기화 부분만 변경하고 루프 본문은 그대로 둔다.
+```
+for(int i=1; i < n / 2; i++) 
+			System.out.print("+-");
+```
+
+## 반복 과정에서 조건 판단하기 3 
+다음은 *를 n개 출력하도 w개마다 줄 바꿈을 하는 프로그램이다.
+
+- chap01/PrintStars1.java 
+```
+import java.util.Scanner;
+
+public class PrintStars1 {
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int n, w;
+		
+		System.out.println("*를 n개 출력하되 w개마다 줄을 바꿔서 출력합니다.");
+
+		do {
+			System.out.print("n값: ");
+			n = stdIn.nextInt();
+		}while (n <= 0);
+		
+		do {
+			System.out.print("w값: ");
+			w = stdIn.nextInt();
+			
+		}while (w <= 0 || w > n);
+		
+		for (int i = 0; i < n; i++) {
+			System.out.print("*");
+			if(i % w == w - 1)
+				System.out.println();
+		}
+		if (n % w != 0)
+			System.out.println();
+	}
+
+}
+
+```
+|출력 결과|
+|--|
+|*를 n개 출력하되 w개마다 줄을 바꿔서 출력합니다.
+n값: 14
+w값: 5
+*****
+*****
+****|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
