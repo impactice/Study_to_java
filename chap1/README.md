@@ -1024,8 +1024,49 @@ w값: 5|
 
 - chap01/PrintStars2.java 
 ```
+import java.util.Scanner;
+
+public class PrintStars2 {
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int n, w;
+		
+		System.out.println("*를 n개 출력하되 w개마다 줄을 바꿔서 출력합니다.");
+
+		do {
+			System.out.print("n값: ");
+			n = stdIn.nextInt();
+		}while (n <= 0);
+		
+		do {
+			System.out.print("w값: ");
+			w = stdIn.nextInt();
+			
+		}while (w <= 0 || w > n);
+		
+		for (int i = 0; i < n / w; i++) {
+			System.out.print("*".repeat(w));
+		}
+		int rest = n % w;
+		if (rest != 0)
+			System.out.println("*".repeat(w));
+
+	}
+
+}
 
 ```
+##### .repeat()
+.repeat()는 Java 11부터 사용 가능한 String 클래스의 메서드이다. 이 메서드는 문자열을 지정한 횟수만큼 반복해서 이어붙인 새로운 문자열을 반환하는 역할을 한다
+
+- 코드에서의 활용 설명:
+
+```
+System.out.print("*".repeat(w));
+
+```
+"*"라는 문자열을 w번 반복해서 출력한다 예를 들어 w = 5라면 "*".repeat(5)는 "*****"를 반환하고, 그걸 System.out.print()가 화면에 출력하게 된다
 
 
 
