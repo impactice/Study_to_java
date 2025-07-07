@@ -1045,10 +1045,10 @@ public class PrintStars2 {
 			
 		}while (w <= 0 || w > n);
 		
-		for (int i = 0; i < n / w; i++) {
+		for (int i = 0; i < n / w; i++) { //1
 			System.out.print("*".repeat(w));
 		}
-		int rest = n % w;
+		int rest = n % w; ///2
 		if (rest != 0)
 			System.out.println("*".repeat(w));
 
@@ -1057,6 +1057,11 @@ public class PrintStars2 {
 }
 
 ```
+
+1. for문에서 *를 w개 출력하는 것을 n/w번 실행한다.
+- 메서드 호출식 "*".repeat(w)는 *를 반복한 문자열을 생성하여 반환한다. 메서드repeat()는 String 클래스에 들어 있는 인스턴스 메서드이다.
+2. n값이 w값의 배수가 아니라면 남아 있는 마지막 줄 바꿈을 한다. n값을 w값으로 나눈 나머지를 구하여 변수 rest에 넣고 *를 rest개 출력한 다음 줄 바꿈을 한다.
+
 ### .repeat()
 .repeat()는 Java 11부터 사용 가능한 String 클래스의 메서드이다. 이 메서드는 문자열을 지정한 횟수만큼 반복해서 이어붙인 새로운 문자열을 반환하는 역할을 한다
 
@@ -1071,11 +1076,37 @@ System.out.print("*".repeat(w));
 - 루프 없이 문자열 반복이 가능해서 코드가 깔끔해진다.
 - 성능도 괜찮고, 읽기 쉬운 방식
 
+### 보충수업 1-7) 논리 연산과 드모르간 법칙 
+- chap01/TwoDigits.java 
+```
+import java.util.Scanner;
 
+public class TwoDigits {
 
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int no;
+		
+		System.out.println("2자리의 양수를 입력하세요.");
+		
+		do {
+			System.out.print("no값: ");
+			no = stdIn.nextInt();
+			
+		}while (no < 10 || no > 99);
 
+		System.out.println("변수 no값은 "+no+"이 되었습니다.");
+	}
 
-
+}
+```
+|실행 결과|
+|--|
+|2자리의 양수를 입력하세요.
+no값: 5
+no값: 105
+no값: 57
+변수 no값은 57이 되었습니다.|
 
 
 
