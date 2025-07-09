@@ -1264,12 +1264,37 @@ public class Multi99Table3 {
 Q13. 오른쪽 결과와 같이 입력한 수를 한 변으로 하는 정사각형을 *로 출력하는 프로그램을 작성하세요.
 
 ```
-
+정사각형을 출력합니다.
+변의 길이: 5
+*****
+*****
+*****
+*****
+*****
 ```
 
+```
+import java.util.Scanner;
 
+public class Multi99Table4 {
 
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.print("정사각형을 출력합니다.\n");
+		System.out.print("변의 길이: ");
+		int a = stdIn.nextInt();
+		
+		for (int i=1; i <= a; i++) {
+			for(int j=1; j <= a; j++)
+				System.out.print("*");
+			System.out.println();
+		}
+	}
 
+}
+
+```
 
 
 
