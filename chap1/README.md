@@ -1348,14 +1348,21 @@ static void triangleLB(int n)   //왼쪽 아래가 직각인 이등변삼각형�
 
 ```
 static void trianglLU(int n)   //왼쪽 위가 직각인 이등변삼각형을 출력
-
+static void triangleRU(int n)  //오른쪽 위가 직각인 이등변삼각형을 출력
+static void triangleRB(int n)  //오른쪽 아래가 직각인 이등변삼각형을 출력  
 ```
 
 Q15. n단의 피라미드를 출력하는 메서드를 작성하세요(오른쪽은 4단의 예).
+- i행에는 (i - 1) * 2 + 1개의 *가 출력되게 하세요. 마지막 n행에는 (n - 1) * 2 + 1개의 *를 출력하게 됩니다. 
+```
+static void spira(int n)
+```
 
 Q16. 오른쪽과 같이 아래를 향한 n단의 숫자 피라미드를 출력하는 메서드를 작성하세요.
-
-
+- i행에 출력하는 숫자는 i%10으로 구하세요. 
+```
+static void npira(int n) 
+```
 
 
 
