@@ -19,6 +19,7 @@ public class Max3 {
 		System.out.print("c의 메서드로 작성하세요. 
 
 ```
+```
 static void triangleLB(int n)   //왼쪽 아래가 직각인 이등변삼각형을 출력
 ```
 
