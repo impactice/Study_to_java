@@ -1377,7 +1377,7 @@ public class Triangle1 {
 또, 왼쪽 위, 오른쪽 아래가 직각인 이등변삼각형을 출력하는 메서드를 각각 작성하세요. 
 
 ```
-static void trianglLU(int n)   //왼쪽 위가 직각인 이등변삼각형을 출력
+static void triangleLU(int n)   //왼쪽 위가 직각인 이등변삼각형을 출력
 static void triangleRU(int n)  //오른쪽 위가 직각인 이등변삼각형을 출력
 static void triangleRB(int n)  //오른쪽 아래가 직각인 이등변삼각형을 출력  
 ```
