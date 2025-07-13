@@ -78,10 +78,13 @@ a = new int[5];	// 참조하기
 |--|--|
 |byte|zero, 곧(byte)0|
 |short|zero, 곧(short)0|
-|int|zero, 곧0| 
-|long|zero, 곧0L|
-
-
+|int|zero, 곧 0| 
+|long|zero, 곧 0L|
+|float|zero, 곧 0.0f|
+|double|zero, 곧 0.0d|
+|char|널(null) 문자, 곧'\u0000'|
+|boolean|거짓, 곧 false|
+|참조형|널(null) 참조, 곧 null|
 
 
 
