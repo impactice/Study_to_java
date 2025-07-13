@@ -1490,6 +1490,37 @@ static void spira(int n)
  *******
 ```
 
+```
+import java.util.Scanner;
+
+public class Triangle5 {
+
+	static void spira(int n) {
+		for (int i =1; i<= n; i++) {
+			for (int z=i; z<=n; z++) {
+				System.out.printf(" ");
+			}
+			for(int j =1; j<= (i-1)*2+1; j++)
+				System.out.print("*");
+			System.out.println();
+		}
+	}
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int n;
+		
+		do {
+			System.out.print("몇 단 삼각형입니까?: ");
+			n = stdIn.nextInt();
+		}while (n <=0 );
+
+		spira(n);
+	}
+
+}
+
+```
+
 Q16. 오른쪽과 같이 아래를 향한 n단의 숫자 피라미드를 출력하는 메서드를 작성하세요.
 - i행에 출력하는 숫자는 i%10으로 구하세요. 
 ```
