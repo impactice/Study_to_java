@@ -77,4 +77,13 @@ a = new int[5];	// 참조하기
 |자료형|기본값|
 |--|--|
 |byte|zero, 곧(byte)0|
+|short|zero, 곧(short)0|
+|int|zero, 곧0| 
+|long|zero, 곧0L|
+
+
+
+
+
+
 
