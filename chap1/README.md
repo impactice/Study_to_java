@@ -1527,9 +1527,36 @@ Q16. 오른쪽과 같이 아래를 향한 n단의 숫자 피라미드를 출력�
 static void npira(int n) 
 ```
 
+```
+import java.util.Scanner;
 
+public class Triangle6 {
 
+	static void npira(int n) {
+		for (int i =1; i<= n; i++) {
+			for (int z=i; z<=n; z++) {
+				System.out.printf(" ");
+			}
+			for(int j =1; j<= (i-1)*2+1; j++)
+				System.out.print(i%10);
+			System.out.println();
+		}
+	}
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int n;
+		
+		do {
+			System.out.print("몇 단 삼각형입니까?: ");
+			n = stdIn.nextInt();
+		}while (n <=0 );
 
+		npira(n);
+
+	}
+
+}
+```
 
 
 
