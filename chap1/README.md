@@ -1344,6 +1344,36 @@ Q14. 직각이등변삼각형을 출력하는 부분을 아래와 같은 형식�
 static void triangleLB(int n)   //왼쪽 아래가 직각인 이등변삼각형을 출력
 ```
 
+```
+import java.util.Scanner;
+
+public class Triangle1 {
+	static void triangleLB(int n) { //왼쪽 아래가 직각인 이등변삼각형을 출력
+		for (int i =1; i<= n; i++) {
+			for(int j =1; j<= i; j++)
+				System.out.print("*");
+			System.out.println();
+		}
+	}
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int n;
+		
+		System.out.println("왼쪽 아래가 직각인 이등변삼각형을 출력합니다.");
+		
+		do {
+			System.out.print("몇 단 삼각형입니까?: ");
+			n = stdIn.nextInt();
+		}while (n <=0 );
+		
+		triangleLB(n);
+		
+	}
+
+}
+
+```
+
 또, 왼쪽 위, 오른쪽 아래가 직각인 이등변삼각형을 출력하는 메서드를 각각 작성하세요. 
 
 ```
