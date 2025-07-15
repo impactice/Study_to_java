@@ -92,6 +92,17 @@ a = new int[5];	// 참조하기
 
 ### 배열의 요솟값을 초기화하며 배열 선언하기
 배열 본체는 new 연산자뿐만 아니라 배열 초기화(array initializer)에서도 생성할 수 있다. 배열 초기화를 사용하면 배열 본체의 생성과 동시에 각 구성 요소를 특정값으로 초기화할 수 있다
+- chap02/IntArrayInit.java 
+```
+// 구성 요소의 자료형이 int형인 배열(구성 요솟수는 5: 배열 초기화에 의해 생성)
+public class IntArrayInit {
 
+	public static void main(String[] args) {
+		int[] a = {1,2,3,4,5}; //배열 초기화에 의해 생성
+		
+		for(int i = 0; i < a.length; i++)
+			System.out.println("a["+i+"] = " +a[i]);
+	}
 
-
+}
+```
