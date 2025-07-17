@@ -146,17 +146,58 @@ for (int i = 1; i < n; i++)
 즉, 스캐닝(scanning)을 의미한다. 주사는 데이터를 하나씩 지나면서(走, 달릴 주) 살피고 조사하는(査, 조사할 사) 일을 말한다. 영어로는 traverse라고 하는데, 이는 '가로지르다', '횡단하다'라는 뜻이다. 
 
 ### 보충수업2-1 값을 대입하지 않은 지역 변수 
-배열의 구성 요소와 클래스의 필드는 기본값으로 초기화된다. 그러나 메서드 안에서 선언한 지역 변수는 기본값으로 초기화되지 않는다. 즉, 변수를 만들어도 초기화는 수행되지 않는다. 자바에서 초기화나 대입을 통해 값이 들어가는데, 그렇지 않은 변수, 곧 값이 들어 있지 않은 변수에서 값을 꺼낼 수는 없다. 따라서 다음 프로그램은 컴파일 오류가 발생한다. 
+배열의 구성 요소와 클래스의 필드는 기본값으로 초기화된다. 그러나 메서드 안에서 선언한 지역 변수는 기본값으로 초기화되지 않는다.   
+즉, 변수를 만들어도 초기화는 수행되지 않는다. 자바에서 초기화나 대입을 통해 값이 들어가는데, 그렇지 않은 변수, 곧 값이 들어 있지 않은 변수에서 값을 꺼낼 수는 없다. 따라서 다음 프로그램은 컴파일 오류가 발생한다. 
 
+```
+int a;
+// 값이 들어 있지 않은 변수에서 값을 꺼내려고 함
+System.out.println( "a값은 "+a+ "입니다."); 	// 컴파일 오류 
+```
 
+#### 프로그램 실행 중 배열의 요솟수 결정하기 
+- chap02/MaxOfArray.java 
+```
+import java.util.Scanner;
 
+public class MaxOfArray {
+	// 배열 a의 최댓값을 구하여 반환 
+	static int maxOf(int[] a) {
+		int max = a[0];
+		for (int i =1; i < a.length; i++)
+			if (a[i] > max)
+				max = a[i];
+		return max;
+	}
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("키의 최댓값을 구합니다.");
+		System.out.print("사람 수: ");
+		int num = stdIn.nextInt();
+		
+		int[] height = new int[num];
+		
+		for (int i = 0; i < num; i++) {
+			System.out.print("height["+i+"]:");
+			height[i] = stdIn.nextInt();
+		}
+		
+		System.out.println("최댓값은 "+maxOf(height)+ "입니다.");
+	}
 
-
-
-
-
-
-
+}
+```
+|실핼 결과|
+|--| 
+|키의 최댓값을 구합니다.
+사람 수: 5
+height[0]:172
+height[1]:153
+height[2]:192 
+height[3]:140
+height[4]:165
+최댓값은 192입니다.|
 
 
 
