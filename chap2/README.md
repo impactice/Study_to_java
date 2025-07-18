@@ -223,12 +223,12 @@ height[4]:165
 
 
 
-**접근 제한자 사용**
+**접근 제한자 사용**  
 ① 클래스: public, default  
-② 
-③
-④
-⑤
+② 생성자: public, protected, default, private 
+③ 멤버 변수: public, protected, default, private
+④ 멤버 메서드: public, protected, default, private
+⑤ 지역 변수: 접근 제한자를 사용할 수 없음 
 
 
 
