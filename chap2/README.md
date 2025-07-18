@@ -328,10 +328,15 @@ b Random rand = new Random(n);	// seed를 지정
 프로그램을 할 때 분명하게 seed를 지정하는 방법이 b이다. 주어진 seed를 바탕으로 난수 생성기가 난수를 생성한다.
 
 
-난수를 생성하는 Random 클래스의 메서드 
+표) 난수를 생성하는 Random 클래스의 메서드 
 |구하는 식(메서드 호출)|자료형|생성한 값의 범위|
 |--|--|--| 
 |nextBoolean()|boolean|true 또는 false|
+|nextInt()|int|-2147483648 ~ ±2147483647|
+|nextInt(n)|int|0~n-1|
+|nextLong()|long|-9223372036854775808 ~ 9223372036854775807|
+|nextDouble()|double|0.0 이상 1.0 미만|
+|nextFloat()|float|0.0 이상 1.0 미만|
 
 
 
