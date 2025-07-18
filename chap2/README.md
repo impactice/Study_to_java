@@ -278,13 +278,45 @@ height[3]: 189
 height[4]: 125
 최댓값은 189입니다.|
 
+### 연습문제 
+Q1. 키뿐만 아니라 사람 수도 난수로 생성하도록 MaxOfArrayRand.java를 수정하여 프로그램을 작성하세요. 
+```
+import java.util.Random;
+import java.util.Scanner;
 
+class MaxOfArrayRand2 {
+	static int maxOf(int[] a) {
+		int max = a[0];
+		for (int i = 1; i < a.length; i++)
+			if (a[i] > max)
+				max = a[i];
+		return max;
+	}
+	public static void main(String[] args) {
+		Random rand = new Random();
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.println("키의 최댓값을 구합니다.");
+		System.out.print("사람 수: ");
+		int num = rand.nextInt(90);	// 배열의 요솟수를 입력받음 
+		
+		int[] height = new int[num]; // 요솟수가 num인 배열을 생성 
+		
+		System.out.println("킷값은 아래와 같습니다.");
+		for (int i = 0; i < num; i++) {
+			height[i] = 100 + rand.nextInt(90);	// 요솟값을 난수로 결정
+			System.out.println("height["+i+"]: "+height[i]);
+		}
+		
+		System.out.println("최댓값은 "+maxOf(height)+"입니다.");
 
+	}
 
+}
+```
 
-
-
-
+### 보충수업2-3) 난수의 생성 
+java.util 패키지에 속한 Random 클래스는 자바가 제공하는 아주 큰 클래스 라이브러리이다. Random 클래스의 인스턴스는 일련의 의사 난수(진짜 난수와 비슷한 가짜 난수)를 생성한다. 난수는 무
 
 
 
