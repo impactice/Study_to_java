@@ -358,10 +358,15 @@ for (int i = 0; i < n/2; i++)
 ```
 
 #### 두 값의 교환 
-
-
-
-
+```
+// 배열 요소 a[idx1]과 a[idx2]의 값을 교환
+static void swap(int[] a, int idx1, int idx2) {
+	int t = a[idx1];
+	a[idx1] = a[idx2];
+	a[idx2] = t;
+}
+```
+메서드 swap가 수행하는 것은 배열 a의 요소 a[idx1]값과 a[idx2]값을 교환하는 것이다. 그러므로 swap(x, 1, 5)를 호출하면 메서드로부터 돌아올 때 x[1]값과 x[5]값이 바뀌어 있다.
 
 
 
