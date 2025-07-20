@@ -366,12 +366,57 @@ static void swap(int[] a, int idx1, int idx2) {
 	a[idx2] = t;
 }
 ```
-메서드 swap가 수행하는 것은 배열 a의 요소 a[idx1]값과 a[idx2]값을 교환하는 것이다. 그러므로 swap(x, 1, 5)를 호출하면 메서드로부터 돌아올 때 x[1]값과 x[5]값이 바뀌어 있다.
+메서드 swap가 수행하는 것은 배열 a의 요소 a[idx1]값과 a[idx2]값을 교환하는 것이다. 그러므로 swap(x, 1, 5)를 호출하면 메서드로부터 돌아올 때 x[1]값과 x[5]값이 바뀌어 있다.  
 
+- chap02/ReverseArray.java 
+```
+import java.util.Arrays;
+import java.util.Scanner;
 
+// 배열 요소에 값을 읽어 들여 역순으로 정렬
+class ReverseArray {
+	// 배열 요소 a[dix1]과 a[idx2]의 값을 바꿈
+	static void swap(int[] a, int idx1, int idx2) {
+		int t = a[idx1]; a[idx1] = a[idx2]; a[idx2] = t; 	
+	}
+	static void reverse(int[] a) {
+		for (int i = 0; i < a.length/2; i++)
+			swap(a, i, a.length -i -1);
+	}
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		
+		System.out.print("요솟수: ");
+		int num = stdIn.nextInt();	//요솟수 
+		
+		int[] x = new int[num];	//요솟수가 num인 배열
+		
+		for (int i = 0; i < num; i++) {
+			System.out.print("x["+i+"]: ");
+			x[i] = stdIn.nextInt();
+		}
+		
+		reverse(x);	// 배열 a의 요소를 역순으로 정렬
+		
+		System.out.println("요소를 역순으로 정렬했습니다.");
+		System.out.println("x= "+Arrays.toString(x));
 
+	}
 
-
+}
+```
+|실행 결과|
+|--|
+|요솟수: 7
+x[0]: 2
+x[1]: 5
+x[2]: 1
+x[3]: 3
+x[4]: 9
+x[5]: 6
+x[6]: 7
+요소를 역순으로 정렬했습니다.
+x= [7, 6, 9, 3, 1, 5, 2]|
 
 
 
