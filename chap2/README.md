@@ -438,7 +438,7 @@ Arrays.toString(x)
 ### 연습문제 
 Q2. 오른쪽처럼 배열 요소를 역순으로 정렬하는 과정을 하나 하나 나타내는 프로그램을 작성하세요. 
 ```
-2 5 1 3 9 6 7 
+[2, 5, 1, 3, 9, 6, 7]
 a[0]과 a[6]을 교환합니다.
 [7, 5, 1, 3, 9, 6, 2]
 a[1]과 a[5]을 교환합니다.
@@ -473,4 +473,46 @@ class ReverseArray2 {
 	}
 
 }
+```
+
+Q3. 배열 a의 모든 요소의 합계를 구하여 반환하는 메서드를 작성하세요. 
+```
+static int sumOf(int[] a) 
+```
+
+```
+import java.util.Scanner;
+
+class ReverseArray3 {
+
+	static int sumOf(int[] a) {
+		int sum = 0;
+		for (int i = 0; i < a.length; i++) {
+			sum += a[i];
+		}
+		return sum;
+	}
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+
+		System.out.print("요소 수: ");
+		int num = stdIn.nextInt();
+
+		int[] x = new int[num];
+
+		for (int i = 0; i < num; i++) {
+			System.out.print("x[" + i + "]: ");
+			x[i] = stdIn.nextInt();
+		}
+
+		int result = sumOf(x);
+		System.out.println("배열 요소의 합계: " + result);
+	}
+}
+```
+
+Q4. 배열 b의 모든 요소를 배열 a에 복사하는 메서드 copy를 작성하세요. 
+```
+static void copy(int[] a, int[] b)
 ```
