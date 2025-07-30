@@ -516,3 +516,46 @@ Q4. 배열 b의 모든 요소를 배열 a에 복사하는 메서드 copy를 작�
 ```
 static void copy(int[] a, int[] b)
 ```
+
+```
+import java.util.Scanner;
+
+public class ReverseArray4 {
+	static void copy(int[] a, int[] b) {
+		for (int i = 0; i < a.length; i++) {
+			b[i] = a[i];
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+
+		System.out.print("요소 수: ");
+		int num = stdIn.nextInt();
+
+		int[] x = new int[num];
+		int[] y = new int[num]; // 복사 대상 배열도 같은 크기로 초기화해야 함
+
+		for (int i = 0; i < num; i++) {
+			System.out.print("x[" + i + "]: ");
+			x[i] = stdIn.nextInt();
+		}
+
+		copy(x, y); // 반환값이 필요 없는 void 메서드이므로 그냥 호출만 하면 됨
+
+		System.out.println("배열 x의 모든 요소를 배열 y에 복사했습니다!");
+		for (int i = 0; i < num; i++) {
+			System.out.println("y[" + i + "] = " + y[i]);
+		}
+	}
+}
+```
+
+Q5. 배열 b의 모든 요소를 배열 a에 역순으로 복사하는 메서드 rcopy를 작성하세요. 
+```
+static void rcopy(int[] a, int[] b) 
+```
+
+```
+
+```
