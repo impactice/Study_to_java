@@ -609,6 +609,12 @@ public class ReverseArray5 {
 
 ## 기수 변환하기 
 
+### 보충수업2-5) 기수 살펴보기 
+- chap02/CardConv.java 
+
+
+
+#### 조금만 더! 정수 상수의 n진수 표현 방법 
 
 
 
