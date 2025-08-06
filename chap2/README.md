@@ -679,7 +679,180 @@ class CardConv {
 #### 조금만 더! 정수 상수의 n진수 표현 방법 
 
 ### 연습문제 
-Q6. 오른쪽처럼 기수 변환 과정으 자세히 나타내는 프로그램을 작성하세요. 
+Q6. 오른쪽처럼 기수 변환 과정을 자세히 나타내는 프로그램을 작성하세요. 
+```
+10진수를 기수 변환합니다.
+변환하는 음이 아닌 정수: 59
+어떤 진수로 변환할까요? (2~36): 2
+2|        59
+ + ----------
+2|        29  *** 1
+ + ----------
+2|        14  *** 1
+ + ----------
+2|        7  *** 1
+ + ----------
+2|        3  *** 1
+ + ----------
+2|        1  *** 1
+ + ----------
+          0  *** 1
+2진수로 111011입니다.
+한 번 더 할까요? (1...예/0...아니요): 
+```
+- version1
+```
+import java.util.Scanner;
+
+public class CardConv2 {
+	static int cardConv2(int x, int r, char[] d) {
+		int digits = 0;	// 변환 후의 자릿수 
+		String dchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWYZ";
+		
+		do {
+			d[digits++] = dchar.charAt(x % r); //r로 나눈 나머지를 저장
+			x /= r;
+		} while (x != 0 );
+		for (int i = 0; i < digits / 2; i++ ) { // 배열 d의 숫자 문자열을 역순으로 정렬
+			char t = d[i];
+			d[i] = d[digits -i -1];
+			d[digits -i -1] = t;
+		}
+		return digits;
+	}
+	public static void main(String[] args) {
+		Scanner stdIn = new Scanner(System.in);
+		int no;						//변환하는 정수
+		int cd;						// 기수
+		int dno;					//반환 후의 자릿수
+		int retry;					// 다시 한번?
+		char[] cno = new char[32];	// 변환 후 각 자리의 숫자를 넣어 두는 문자 배열 
+		
+		System.out.println("10진수를 기수 변환합니다.");
+		do {
+			do {
+				System.out.print("변환하는 음이 아닌 정수: ");
+				no = stdIn.nextInt();
+			}while (no < 0); 
+			
+			do {
+				System.out.print("어떤 진수로 변환할까요? (2~36): ");
+				cd = stdIn.nextInt();
+			}while (cd < 2 || cd > 36);
+			
+			dno = cardConv2(no, cd, cno);
+			
+			
+			do {
+				System.out.print(cd + "|"); 
+				System.out.println("        "+no);
+				System.out.println(" + ----------");
+			}while (no == 0);
+			
+			int num = no/cd;
+			do {
+				System.out.print(cd + "|"); 
+				System.out.println("        "+num+"  *** 1");
+				System.out.println(" + ----------");
+				num = num/cd;
+			}while (num > 0);
+			
+			do {
+				num =0;
+				System.out.println("          "+num+"  *** 1");
+			}while (num == 1);
+			
+			System.out.print(cd+"진수로 ");
+			for (int i = 0; i < dno; i++)
+				System.out.print(cno[i]);
+			System.out.println("입니다.");
+			
+			System.out.print("한 번 더 할까요? (1...예/0...아니요): ");
+			retry = stdIn.nextInt();
+		} while (retry == 1);
+		
+
+	}
+
+}
+```
+
+- version2
+```
+import java.util.Scanner;
+
+public class CardConv2 {
+
+    // 기수 변환 함수 + 변환 과정 출력
+    static int cardConv2(int x, int r, char[] d) {
+        int digits = 0;
+        String dchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // A~Z까지 총 36진수 지원
+
+        int original = x;
+
+        // 변환 과정 출력
+        System.out.printf("%d|%10d\n", r, x);
+        System.out.println(" +----------");
+
+        do {
+            int quotient = x / r;
+            int remainder = x % r;
+            d[digits++] = dchar.charAt(remainder);
+            x = quotient;
+
+            if (x != 0) {
+                System.out.printf("%d|%10d  *** %s\n", r, x, dchar.charAt(remainder));
+                System.out.println(" +----------");
+            } else {
+                System.out.printf("%10d  *** %s\n", x, dchar.charAt(remainder));
+            }
+        } while (x != 0);
+
+        // 역순 정렬
+        for (int i = 0; i < digits / 2; i++) {
+            char t = d[i];
+            d[i] = d[digits - i - 1];
+            d[digits - i - 1] = t;
+        }
+
+        return digits;
+    }
+
+    public static void main(String[] args) {
+        Scanner stdIn = new Scanner(System.in);
+        int no;
+        int cd;
+        int dno;
+        int retry;
+        char[] cno = new char[32];
+
+        System.out.println("10진수를 기수 변환합니다.");
+
+        do {
+            do {
+                System.out.print("변환하는 음이 아닌 정수: ");
+                no = stdIn.nextInt();
+            } while (no < 0);
+
+            do {
+                System.out.print("어떤 진수로 변환할까요? (2~36): ");
+                cd = stdIn.nextInt();
+            } while (cd < 2 || cd > 36);
+
+            dno = cardConv2(no, cd, cno);
+
+            System.out.print(cd + "진수로 ");
+            for (int i = 0; i < dno; i++)
+                System.out.print(cno[i]);
+            System.out.println("입니다.");
+
+            System.out.print("한 번 더 할까요? (1...예/0...아니요): ");
+            retry = stdIn.nextInt();
+        } while (retry == 1);
+    }
+}
+
+```
 
 
 
