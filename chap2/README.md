@@ -1469,4 +1469,8 @@ public class PrimeNumber3 {
 997
 나눗셈을 수행한 횟수: 3774|
 
+### 보충수업2-6 배열에 관련된 세부 규칙 
+-chap02/CloneArray.java 
+```
 
+```
