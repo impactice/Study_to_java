@@ -1687,6 +1687,11 @@ YMD after(int n)
 - n일 앞의 날짜를 반환 
 YMD before(int n)
 
-
-
+```
+class YMD {
+		int y;	//년
+		int m;	//월(1~12)
+		int d;	// 일(1~31)
+	}
+```
 
